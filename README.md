@@ -23,8 +23,10 @@ public class TrabalhoSigno {
         nome = ler.nextLine();
         //Veriicar se o nome tem mais que 8 caracteres
         if (nome.length() >= 8) {
-            System.out.println("Seu nome não foi informado corretamente");
-        }
+            System.out.println("Valido");
+        } else {
+            System.out.println("Não foi informado corretamente")
+   }  
 
         //Continuação da entrada de dados
         System.out.println("Informe o seu sexo, 1 para feminino e 2 para masculino,numeros maiores que 2 ira ser considerado masculino");

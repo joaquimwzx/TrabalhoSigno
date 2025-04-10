@@ -11,6 +11,7 @@ import java.util.Scanner;
 public class TrabalhoSigno {
 
     public static void main(String[] args) {
+   
         //Declaração de variaveis
 
         String nome, signo = null, corSorte = null;

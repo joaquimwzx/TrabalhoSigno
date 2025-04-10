@@ -26,7 +26,7 @@ public class TrabalhoSigno {
             System.out.println("Seu nome não foi informado corretamente");
         }
 
-        //Contiuação da entrada de dados
+        //Continuação da entrada de dados
         System.out.println("Informe o seu sexo, 1 para feminino e 2 para masculino,numeros maiores que 2 ira ser considerado masculino");
         sexo = ler.nextInt();
         System.out.println("Digite o dia de nascimento 1-31");

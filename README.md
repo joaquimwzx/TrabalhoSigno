@@ -12,9 +12,9 @@ public class TrabalhoSigno {
 
     public static void main(String[] args) {
    
-        //Declaração de variaveis
+      //Declaração de variaveis
 
-        String nome, signo = null, corSorte = null;
+        String nome, signo, corSorte;
         int sexo, diaNasc, mesNasc, anoNasc, diaAtual, mesAtual, anoAtual, idade, numeroSorte;
         Scanner ler = new Scanner(System.in);
 
@@ -22,12 +22,12 @@ public class TrabalhoSigno {
         System.out.println("Qual e o seu nome");
         nome = ler.nextLine();
         //Veriicar se o nome tem mais que 8 caracteres
-        if (nome.length() >= 8) {
+        if (nome.length() < 8) {
             System.out.println("Valido");
         } else {
-            System.out.println("Não foi informado corretamente")
-           return;
-        }  
+            System.out.println("Não foi informado corretamente");
+            return;
+        }
 
         //Continuação da entrada de dados
         System.out.println("Informe o seu sexo, 1 para feminino e 2 para masculino,numeros maiores que 2 ira ser considerado masculino");
@@ -51,35 +51,48 @@ public class TrabalhoSigno {
             idade--;
         }
 
-        //Determinando o signo
-        if ((mesNasc == 3 && diaNasc >= 21) || (mesNasc == 4 && diaNasc <= 19)) {
-            signo = "Áries";
-        } else if ((mesNasc == 4 && diaNasc >= 20) || (mesNasc == 5 && diaNasc <= 20)) {
-            signo = "Touro";
-        } else if ((mesNasc == 5 && diaNasc >= 21) || (mesNasc == 6 && diaNasc <= 20)) {
-            signo = "Gêmeos";
-        } else if ((mesNasc == 6 && diaNasc >= 21) || (mesNasc == 7 && diaNasc <= 22)) {
-            signo = "Câncer";
-        } else if ((mesNasc == 7 && diaNasc >= 23) || (mesNasc == 8 && diaNasc <= 22)) {
-            signo = "Leão";
-        } else if ((mesNasc == 8 && diaNasc >= 23) || (mesNasc == 9 && diaNasc <= 22)) {
-            signo = "Virgem";
-        } else if ((mesNasc == 9 && diaNasc >= 23) || (mesNasc == 10 && diaNasc <= 22)) {
-            signo = "Libra";
-        } else if ((mesNasc == 10 && diaNasc >= 23) || (mesNasc == 11 && diaNasc <= 21)) {
-            signo = "Escorpião";
-        } else if ((mesNasc == 11 && diaNasc >= 22) || (mesNasc == 12 && diaNasc <= 21)) {
-            signo = "Sagitário";
-        } else if ((mesNasc == 12 && diaNasc >= 22) || (mesNasc == 1 && diaNasc <= 19)) {
-            signo = "Capricórnio";
-        } else if ((mesNasc == 1 && diaNasc >= 20) || (mesNasc == 2 && diaNasc <= 18)) {
-            signo = "Aquário";
-        } else {
+        //declarando o signo
+        signo = "peixes";
 
+        //Condiçoes de dia, mes e ano de nascimento
+        if (diaNasc > 1 && diaNasc < 31 && mesNasc < 1 && mesNasc <= 12 && anoNasc >= 1900 && anoNasc <= anoAtual) {
+            // verifica se o dia e o mes que a pessoa nasceu esta de acordo com o signo
+
+            //Determinando o signo
+            if ((mesNasc == 3 && diaNasc >= 21) || (mesNasc == 4 && diaNasc <= 19)) {
+                signo = "Áries";
+            } else if ((mesNasc == 4 && diaNasc >= 20) || (mesNasc == 5 && diaNasc <= 20)) {
+                signo = "Touro";
+            } else if ((mesNasc == 5 && diaNasc >= 21) || (mesNasc == 6 && diaNasc <= 20)) {
+                signo = "Gêmeos";
+            } else if ((mesNasc == 6 && diaNasc >= 21) || (mesNasc == 7 && diaNasc <= 22)) {
+                signo = "Câncer";
+            } else if ((mesNasc == 7 && diaNasc >= 23) || (mesNasc == 8 && diaNasc <= 22)) {
+                signo = "Leão";
+            } else if ((mesNasc == 8 && diaNasc >= 23) || (mesNasc == 9 && diaNasc <= 22)) {
+                signo = "Virgem";
+            } else if ((mesNasc == 9 && diaNasc >= 23) || (mesNasc == 10 && diaNasc <= 22)) {
+                signo = "Libra";
+            } else if ((mesNasc == 10 && diaNasc >= 23) || (mesNasc == 11 && diaNasc <= 21)) {
+                signo = "Escorpião";
+            } else if ((mesNasc == 11 && diaNasc >= 22) || (mesNasc == 12 && diaNasc <= 21)) {
+                signo = "Sagitário";
+            } else if ((mesNasc == 12 && diaNasc >= 22) || (mesNasc == 1 && diaNasc <= 19)) {
+                signo = "Capricórnio";
+            } else if ((mesNasc == 1 && diaNasc >= 20) || (mesNasc == 2 && diaNasc <= 18)) {
+                signo = "Aquário";
+            } else if ((mesNasc == 2 && diaNasc >= 20) || (mesNasc == 3 && diaNasc <= 20)) {
+                signo = "Peixes";
+            } else {
+                System.out.println("Não foi informado corretamente");
+            }
         }
 
         //Numero da sorte
         numeroSorte = 1 + (int) (Math.random() * 99);
+
+        //entrada de dados da cor
+        corSorte = "azul";
 
         //Cor da sorte
         int numCor = 1 + (int) (Math.random() * 5);
@@ -96,6 +109,7 @@ public class TrabalhoSigno {
         }
 
         //Saida de dados
+        
         //mulheres
         if (sexo == 1) {
             System.out.println("Sra. " + nome + ", nascida em " + diaNasc + "/" + mesNasc + "/" + anoNasc
@@ -106,5 +120,4 @@ public class TrabalhoSigno {
                     + ", é do signo de " + signo + ". Você tem " + idade + " anos. Seu número da sorte é " + numeroSorte + " e sua cor é " + corSorte + ".");
         }
     }
-
 }

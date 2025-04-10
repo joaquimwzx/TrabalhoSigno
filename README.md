@@ -26,6 +26,7 @@ public class TrabalhoSigno {
             System.out.println("Valido");
         } else {
             System.out.println("Não foi informado corretamente")
+           return;
         }  
 
         //Continuação da entrada de dados

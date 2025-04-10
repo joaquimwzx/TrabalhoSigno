@@ -26,7 +26,7 @@ public class TrabalhoSigno {
             System.out.println("Valido");
         } else {
             System.out.println("Não foi informado corretamente")
-   }  
+        }  
 
         //Continuação da entrada de dados
         System.out.println("Informe o seu sexo, 1 para feminino e 2 para masculino,numeros maiores que 2 ira ser considerado masculino");
